@@ -171,21 +171,4 @@ The `online_planning_node.py` will import the functions previously defined and i
 * Every time that a `/move_base_simple/goal` message is received the planner will be asked to plan a new `path` using the `compute_path` function.
 * At a constant frequency, e.g. at 10Hz, if there is a valid `path` computed, the `move_to_point` function must be called with the current pose of the robot (i.e., $x$, $y$, $\theta$ obtained from the `/odom` topic) and the first configuration in the `path` as a goal. If this position is reached with some tolerance, this configuration must be removed from the `path` and the next configuration will become the new goal for the `move_to_point` function. The $\nu_d$ and $w_d$ computed by the `move_to_point` function have to be published as a `geometry_msgs/Twist` in the `cmd_vel` topic in order to move the turtlebot3. If there is no valid `path`, a `geometry_msgs/Twist` message with zero velocity must be published instead.
 
-## Deliverable
 
-The `turtlebot_online_path_planning` package must be completed and compressed into a zip file. (DONT include the Gazebo resource models). Additionaly a PDF with:
-
-* **The names** of the people in the group
-* How to run your code or if some library must be installed
-* A clear image output from doing `rqt_graph` in the command line, showing how all the nodes communicate.
-  <img src="/imgs/rqt_graph.png" width="300">
-* If there is something special to explain.
-* If there is anything that is not working properly.
-* A **YouTube video** showcasing the general results of this practice.
-
-
-# Optional Part: Open Motion Planning Library (OMPL)
-
-Optionally, you can try to use the popular Open Motion Planning Library (OMPL), which besides including **ready to use** implementations of the most popular Sample Based Motion Planners, also gives us the tools to customize and implement new planning strategies.
-
-Follow [these instructions](https://bitbucket.org/udg_cirs/turtlebot_online_path_planning/src/master/docs/ompl.md) for the procedure.
