@@ -1,8 +1,6 @@
 # On-line path planning
 
-**This project belongs to the Universitat de Girona. It is forbidden to publish this project or any derivative work in any public repository.**
-
-This lab will combine the concepts of occupancy grid mapping and path planning seen in previous sessions.
+This lab will combine the concepts of occupancy grid mapping and path planning.
 The main goal of this lab is to move a simulated or real Turtlebot-like robot from its current position to a goal position avoiding the obstacles in the environment.
 
 ## Installation
